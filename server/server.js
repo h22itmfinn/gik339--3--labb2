@@ -2,6 +2,7 @@ const express = require("express");
 const server = express();
 const sqlite3 = require("sqlite3").verbose();
 
+//Uppgift 2 - Mattias
 server
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
@@ -15,6 +16,7 @@ server
 //Startar servern genom att skriva npm start
 server.listen(3000, () => console.log("Server running"));
 
+// Uppgift 3 - Rasmus
 server.get("/users", (req, res) => {
   const db = new sqlite3.Database("./gik339-labb2.db");
   const sql = "SELECT * FROM users";
